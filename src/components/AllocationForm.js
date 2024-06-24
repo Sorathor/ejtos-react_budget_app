@@ -85,23 +85,44 @@ const AllocationForm = (props) => {
               Reduce
             </option>
           </select>
+          <div className="currency-input" style={{ marginLeft: "2rem" }}>
+            <label className="input-group-text" htmlFor="currency option">
+              Currency
+            </label>
+          </div>
+          <select className="custom-select" id="inputGroupSelect03">
+            <option value="USD" name="USD">
+              $ Dollar
+            </option>
+            <option value="Pound_Sterling" name="Pound_Sterling">
+              £ Pound
+            </option>
+            <option value="EUR" name="EUR">
+              € Euro
+            </option>
+            <option value="Rupee" name="Rupee">
+              ₹ Rupee
+            </option>
+          </select>
+          <div className="input-group-prepend">
+            <span style={{ marginLeft: "2rem" }}>$</span>
+            <input
+              required="required"
+              type="number"
+              id="cost"
+              value={cost}
+              style={{ size: 10 }}
+              onChange={(event) => setCost(event.target.value)}
+            ></input>
 
-          <input
-            required="required"
-            type="number"
-            id="cost"
-            value={cost}
-            style={{ marginLeft: "2rem", size: 10 }}
-            onChange={(event) => setCost(event.target.value)}
-          ></input>
-
-          <button
-            className="btn btn-primary"
-            onClick={submitEvent}
-            style={{ marginLeft: "2rem" }}
-          >
-            Save
-          </button>
+            <button
+              className="btn btn-primary"
+              onClick={submitEvent}
+              style={{ marginLeft: "2rem" }}
+            >
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </div>
